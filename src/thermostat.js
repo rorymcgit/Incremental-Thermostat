@@ -11,7 +11,11 @@ Thermostat.prototype.checkCurrentTemperature = function () {
 };
 
 Thermostat.prototype.increase = function () {
+  if (this._temperature <= 32) {
   this._temperature += 1;
+  } else {
+  return 'Maximum temperature is 32!';
+  }
 };
 
 Thermostat.prototype.decrease = function() {

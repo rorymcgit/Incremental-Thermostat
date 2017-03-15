@@ -15,7 +15,7 @@ describe('Thermostat', function(){
     expect(thermostat.checkCurrentTemperature()).toEqual(20);
   });
 
-  it(' sets minimum temperature', function(){
+  it('sets minimum temperature', function(){
     expect(thermostat._minTemperature).toEqual(10);
   });
 
@@ -28,6 +28,12 @@ describe('Thermostat', function(){
     it('increases the temperature by 1', function(){
       thermostat.increase();
       expect(thermostat._temperature).toEqual(21);
+    });
+
+    it('wont\'t allow to increase past max temperature', function(){
+      thermostat._temperature = 32;
+      thermostat.increase();
+      expect(thermostat.increase()).toEqual('Maximum temperature is 32!');
     });
   });
 
