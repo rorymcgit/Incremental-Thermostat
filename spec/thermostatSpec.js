@@ -16,9 +16,20 @@ describe('Thermostat', function(){
   });
 
   describe('Increase', function(){
-    it('increases the temperature', function(){
-      thermostat.increase() 
+
+    it('increases the temperature by 1', function(){
+      thermostat.increase();
       expect(thermostat._temperature).toEqual(21);
     });
   });
+
+  describe('Decrease', function(){
+
+    it('decreases temperature by 1', function(){
+      thermostat.increase();
+      thermostat.decrease();
+      expect(thermostat._temperature).toEqual(20);
+    });
+  });
+
 });

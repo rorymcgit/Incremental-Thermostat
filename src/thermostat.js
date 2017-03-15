@@ -9,5 +9,9 @@ Thermostat.prototype.checkCurrentTemperature = function () {
 };
 
 Thermostat.prototype.increase = function () {
-  return this._temperature += 1;
+  this._temperature += 1;
+};
+
+Thermostat.prototype.decrease = function() {
+  this._temperature -= 1;
 };
