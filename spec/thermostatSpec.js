@@ -19,6 +19,10 @@ describe('Thermostat', function(){
     expect(thermostat._minTemperature).toEqual(10);
   });
 
+   it('sets maximum temperature', function(){
+     expect(thermostat._maxTemperature).toEqual(32);
+   });
+
   describe('Increase', function(){
 
     it('increases the temperature by 1', function(){
