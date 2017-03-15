@@ -2,6 +2,7 @@
 
 function Thermostat (){
   this._temperature = 20
+  this._minTemperature = 10
 };
 
 Thermostat.prototype.checkCurrentTemperature = function () {
