@@ -14,4 +14,11 @@ describe('Thermostat', function(){
   it('return the current temperature', function() {
     expect(thermostat.checkCurrentTemperature()).toEqual(20);
   });
+
+  describe('Increase', function(){
+    it('increases the temperature', function(){
+      thermostat.increase() 
+      expect(thermostat._temperature).toEqual(21);
+    });
+  });
 });
