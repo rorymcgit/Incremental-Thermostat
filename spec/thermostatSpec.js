@@ -44,7 +44,11 @@ describe('Thermostat', function(){
       thermostat.decrease();
       expect(thermostat._temperature).toEqual(20);
     });
-
+    it('wont\'t allow to decrease past min temperature', function(){
+      thermostat._temperature = 10
+      thermostat.decrease();
+      expect(thermostat.decrease()).toEqual('Minimum temperature is 10!')
+    });
 
   });
 });
