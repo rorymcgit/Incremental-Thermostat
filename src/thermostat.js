@@ -48,8 +48,10 @@ Thermostat.prototype.checkUsage = function () {
   var usage;
   if (this._temperature < 18) {
     usage = "Low-usage";
+  } else if (this._temperature < 25) {
+    usage = "Medium-usage";
   } else {
-    usage = "Medium-usage"
+    usage = "High-usage";
   };
-  return usage
+  return usage;
 };

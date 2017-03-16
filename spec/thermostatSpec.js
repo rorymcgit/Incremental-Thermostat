@@ -95,12 +95,17 @@ describe('Thermostat', function() {
   describe("usage", function() {
 
     it("confirms low-usage if temperature is below 18", function() {
-      thermostat._temperature = 17
+      thermostat._temperature = 17;
       expect(thermostat.checkUsage()).toEqual("Low-usage");
     });
 
     it("confirms medium-usage if temperature is below 25", function() {
       expect(thermostat.checkUsage()).toEqual("Medium-usage");
+    });
+
+    it("confirms high-usage if temperature is 25 or above", function() {
+      thermostat._temperature = 25;
+      expect(thermostat.checkUsage()).toEqual("High-usage");
     });
   });
 });
