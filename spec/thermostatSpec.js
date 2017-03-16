@@ -2,9 +2,13 @@
 
 describe('Thermostat', function(){
   var thermostat;
+  var maxMessage;
+  var minMessage;
 
   beforeEach(function(){
     thermostat = new Thermostat();
+    maxMessage = ('Maximum temperature is reached!');
+    minMessage = ('Minimum temperature 10!');
   });
 
   it('starts at 20 degrees', function(){
@@ -31,9 +35,10 @@ describe('Thermostat', function(){
     });
 
     it('wont\'t allow to increase past max temperature', function(){
+      thermostat.switchMode()
       thermostat._temperature = 32;
       thermostat.increase();
-      expect(thermostat.increase()).toEqual('Maximum temperature is 32!');
+      expect(function(){thermostat.increase();}).toThrowError(maxMessage);
     });
   });
 
@@ -48,18 +53,29 @@ describe('Thermostat', function(){
     it('wont\'t allow to decrease past min temperature', function(){
       thermostat._temperature = 10
       thermostat.decrease();
-      expect(thermostat.decrease()).toEqual('Minimum temperature is 10!')
+      expect(function(){thermostat.decrease();}).toThrowError(minMessage)
     });
   });
 
   describe("power saving mode", function() {
 
-    it('has a max temp of 25 when ON', function(){
-      expect(thermostat._psMaxTemperature).toEqual(25);
+    it('checks the maximum temp when ON', function(){
+      expect(thermostat.checkMaxTemp()).toEqual(25);
+    });
+
+    it('checks the maximum temp when OFF', function(){
+      thermostat.switchMode();
+      expect(thermostat.checkMaxTemp()).toEqual(32);
     });
 
     it('is on to begin', function(){
       expect(thermostat.checkPowerSavingMode()).toEqual(true);
+    });
+
+    it('wont\'t allow to increase past max temperature when ON', function(){
+      thermostat._temperature = 25;
+      thermostat.increase();
+      expect(function(){thermostat.increase();}).toThrowError(maxMessage);
     });
 
     it("can be switched on or off", function() {
