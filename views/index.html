@@ -5,19 +5,25 @@
     <title> Thermostat </title>
     <link rel="stylesheet" href="stylesheet.css">
   </head>
+
   <body>
     <h1> Hot or Not? </h1>
-    <section>
-      <button id="temperature-up">+</button>
-      <button id="temperature-down">-</button><br/>
-      <button id="temperature-reset">RESET</button><br/>
+
+    <section id= "temp-box">
+
       Current temperature: <span id="temperature"></span><br/>
       Current usage: <span id="usage"></span>
     </section>
-    <div>
-    <button>
-      <img src="../Images/energy saving-on.png" id="power-saving">
-    </button><br/>
+
+    <div id= "power-saving-on">
+      <button id="temperature-up">+</button>
+      <button id="temperature-down">-</button><br/>
+      <button >
+        <img src="../Public/img/energy saving-on.png" height= 60px width= 60px>
+      </button><br>
+
+      <button id="temperature-reset">RESET</button><br/>
+
     </div>
 
     <script src="src/thermostat.js"></script>
