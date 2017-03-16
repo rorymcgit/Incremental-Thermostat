@@ -54,6 +54,10 @@ describe('Thermostat', function(){
 
   describe("power saving mode", function() {
 
+    it('has a max temp of 25 when ON', function(){
+      expect(thermostat._psMaxTemperature).toEqual(25);
+    });
+
     it('is on to begin', function(){
       expect(thermostat.checkPowerSavingMode()).toEqual(true);
     });
