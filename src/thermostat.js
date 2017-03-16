@@ -43,3 +43,11 @@ Thermostat.prototype.decrease = function() {
     throw new Error('Minimum temperature 10!');
   }
 };
+
+Thermostat.prototype.checkUsage = function () {
+  var usage;
+  if (this._temperature < 18) {
+    usage = "Low-usage";
+  }
+  return usage
+};

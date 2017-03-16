@@ -91,4 +91,13 @@ describe('Thermostat', function(){
     expect(thermostat.checkPowerSavingMode()).toEqual(true);
     });
   });
+
+  describe("usage", function() {
+
+    it("confirms low-usage if temperature is below 18", function() {
+      thermostat._temperature = 17
+      expect(thermostat.checkUsage()).toEqual("Low-usage");
+    });
+
+  });
 });
