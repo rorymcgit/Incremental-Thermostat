@@ -35,7 +35,7 @@ describe('Thermostat', function(){
     });
 
     it('wont\'t allow to increase past max temperature', function(){
-      thermostat.switchMode()
+      thermostat.switchMode();
       thermostat._temperature = 32;
       thermostat.increase();
       expect(function(){thermostat.increase();}).toThrowError(maxMessage);
@@ -51,7 +51,7 @@ describe('Thermostat', function(){
     });
 
     it('wont\'t allow to decrease past min temperature', function(){
-      thermostat._temperature = 10
+      thermostat._temperature = 10;
       thermostat.decrease();
       expect(function(){thermostat.decrease();}).toThrowError(minMessage)
     });
@@ -80,10 +80,9 @@ describe('Thermostat', function(){
 
     it("can be switched on or off", function() {
     thermostat.switchMode();
-    expect(thermostat.checkPowerSavingMode()).toEqual(false)
+    expect(thermostat.checkPowerSavingMode()).toEqual(false);
     thermostat.switchMode();
-    expect(thermostat.checkPowerSavingMode()).toEqual(true)
+    expect(thermostat.checkPowerSavingMode()).toEqual(true);
     });
-
   });
 });
