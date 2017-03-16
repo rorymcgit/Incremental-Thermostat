@@ -11,8 +11,15 @@ Thermostat.prototype.checkCurrentTemperature = function () {
   return this._temperature;
 };
 
+Thermostat.prototype.checkPowerSavingMode = function () {
+  return this._powerSaving;
+};
+
+Thermostat.prototype.switchMode = function () {
+  this._powerSaving = !this._powerSaving;
+};
 Thermostat.prototype.increase = function () {
-  if (this._temperature <= 32) {
+  if (this._temperature <= this._maxTemperature) {
     this._temperature += 1;
   } else {
     return 'Maximum temperature is 32!';
@@ -20,7 +27,7 @@ Thermostat.prototype.increase = function () {
 };
 
 Thermostat.prototype.decrease = function() {
-  if (this._temperature >= 10) {
+  if (this._temperature >= this._minTemperature) {
     this._temperature -= 1;
   } else {
     return 'Minimum temperature is 10!'

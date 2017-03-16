@@ -19,10 +19,6 @@ describe('Thermostat', function(){
    expect(thermostat._maxTemperature).toEqual(32);
   });
 
-  it('has power saving on to begin', function(){
-    expect(thermostat._powerSaving).toEqual(true);
-  });
-
   it('return the current temperature', function() {
     expect(thermostat.checkCurrentTemperature()).toEqual(20);
   });
@@ -54,5 +50,20 @@ describe('Thermostat', function(){
       thermostat.decrease();
       expect(thermostat.decrease()).toEqual('Minimum temperature is 10!')
     });
+  });
+
+  describe("power saving mode", function() {
+
+    it('is on to begin', function(){
+      expect(thermostat.checkPowerSavingMode()).toEqual(true);
+    });
+
+    it("can be switched on or off", function() {
+    thermostat.switchMode();
+    expect(thermostat.checkPowerSavingMode()).toEqual(false)
+    thermostat.switchMode();
+    expect(thermostat.checkPowerSavingMode()).toEqual(true)
+    });
+
   });
 });
