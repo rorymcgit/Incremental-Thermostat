@@ -13,12 +13,13 @@
 
       Current temperature: <span id="temperature"></span><br/>
       Current usage: <span id="usage"></span>
+      Power Saving is on? <span id="ps">true</span>
     </section>
 
-    <div id= "power-saving-on">
+    <div id= "buttons">
       <button id="temperature-up">+</button>
       <button id="temperature-down">-</button><br/>
-      <button >
+      <button id="power-saving">
         <img src="../Public/img/energy saving-on.png" height= 60px width= 60px>
       </button><br>
 
@@ -26,8 +27,10 @@
 
     </div>
 
-    <script src="src/thermostat.js"></script>
+    <script src="../src/thermostat.js"></script>
     <script src="../jquery.js"></script>
+    <script src="thermostat_jquery.js"></script>
+
 
   </body>
 </html>

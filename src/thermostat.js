@@ -29,7 +29,7 @@ Thermostat.prototype.reset = function () {
 }
 
 Thermostat.prototype.increase = function () {
-  if (this._temperature <= this.checkMaxTemp()) {
+  if (this._temperature < this.checkMaxTemp()) {
     this._temperature += 1;
   } else {
     throw new Error('Maximum temperature is reached!');
@@ -37,7 +37,7 @@ Thermostat.prototype.increase = function () {
 };
 
 Thermostat.prototype.decrease = function() {
-  if (this._temperature >= this._minTemperature) {
+  if (this._temperature > this._minTemperature) {
     this._temperature -= 1;
   } else {
     throw new Error('Minimum temperature 10!');
