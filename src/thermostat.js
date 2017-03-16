@@ -24,6 +24,10 @@ Thermostat.prototype.switchMode = function () {
   this._powerSaving = !this._powerSaving;
 };
 
+Thermostat.prototype.reset = function () {
+  this._temperature = 20
+}
+
 Thermostat.prototype.increase = function () {
   if (this._temperature <= this.checkMaxTemp()) {
     this._temperature += 1;
