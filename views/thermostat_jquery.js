@@ -24,16 +24,15 @@ $('#power-saving').click(function(){
 })
 
  function update() {
-   $('#temperature').text(thermostat.checkCurrentTemperature());
+   $('#temperature').text(thermostat.checkCurrentTemperature() + "°C");
    $('#usage').text(thermostat.checkUsage());
   //  $('#ps').text(thermostat.checkMaxTemp());
  };
 
 
  $.get("http://api.openweathermap.org/data/2.5/weather?q=London&APPID=c0c1146523134c21458501cd8b2ee3dc&units=metric", function(response){
-   console.log(response);
-   console.log(response.main.temp)
-   console.log(response.weather[0].description)
+   $('#location-temp').text(response.main.temp + "°C")
+   $('#weather-description').text(response.weather[0].description)
  });
 
 
