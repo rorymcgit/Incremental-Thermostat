@@ -7,6 +7,7 @@ h1 {
   width: 40%;
   margin: auto;
   text-align: center;
+  padding: 30px
 }
 
 #temp-box {
@@ -21,7 +22,14 @@ h1 {
 #buttons {
   /*background-image: url(../Public/img/energy saving-on.png);*/
   position: absolute;
-  left: 300px;
+  left: 238px;
   padding: 10px;
+}
+
+#weather-info {
+  position: absolute;
+  top: 100px;
+  left: 248px;
+}
   /*padding: 20px
 }
