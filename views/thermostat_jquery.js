@@ -1,33 +1,32 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
-  updateTemperature();
+  update();
 
 $('#temperature-up').click(function(){
   thermostat.increase();
-  updateTemperature();
+  update();
 })
 
 $('#temperature-down').click(function(){
   thermostat.decrease();
-  updateTemperature();
+  update();
 })
 
 $('#temperature-reset').click(function(){
   thermostat.reset();
-  updateTemperature();
+  update();
 })
 
 $('#power-saving').click(function(){
   thermostat.switchMode();
   $('#ps').text(thermostat.checkPowerSavingMode());
-  updateTemperature();
+  update();
 })
 
-$('#usage').text(thermostat.checkUsage());
-
- function updateTemperature() {
+ function update() {
    $('#temperature').text(thermostat.checkCurrentTemperature());
-
+   $('#usage').text(thermostat.checkUsage());
+  //  $('#ps').text(thermostat.checkMaxTemp());
  };
 });
 

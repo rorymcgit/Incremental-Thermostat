@@ -17,11 +17,14 @@ Thermostat.prototype.checkPowerSavingMode = function () {
 };
 
 Thermostat.prototype.checkMaxTemp = function(){
-  return this.checkPowerSavingMode() ? this._maxTemperature = this._psMaxTemperature : this._maxTemperature;
+  return this.checkPowerSavingMode() ? this._psMaxTemperature : this._maxTemperature;
 };
 
 Thermostat.prototype.switchMode = function () {
   this._powerSaving = !this._powerSaving;
+  if (this.checkCurrentTemperature() > this._psMaxTemperature) {
+    this._temperature = this._psMaxTemperature;
+  }
 };
 
 Thermostat.prototype.reset = function () {
@@ -30,6 +33,8 @@ Thermostat.prototype.reset = function () {
 
 Thermostat.prototype.increase = function () {
   if (this._temperature < this.checkMaxTemp()) {
+    // console.log(this.checkMaxTemp());
+    // console.log(this._maxTemperature);
     this._temperature += 1;
   } else {
     throw new Error('Maximum temperature is reached!');
