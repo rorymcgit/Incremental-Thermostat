@@ -22,8 +22,13 @@ $('#power-saving').click(function(){
   $('#ps').text(thermostat.checkPowerSavingMode());
   updateTemperature();
 })
+
+$('#usage').text(thermostat.checkUsage());
+
  function updateTemperature() {
    $('#temperature').text(thermostat.checkCurrentTemperature());
 
  };
 });
+
+// check mode and check usage functions needed to be implemented so it updates
