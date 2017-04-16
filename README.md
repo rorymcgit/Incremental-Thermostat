@@ -17,7 +17,8 @@ The user can enter their current city in and the openweathermap API will return 
 
 #### Instructions for use:
 - Clone this repo
-- In your browser, open ```views/index.html```
+- In your browser, open ```SpecRunner.html``` to view tests
+- In your browser, open ```views/index.html``` to view app
 - Enter your current location (nearest city)
 - Increase/decrease to desired temperature, set power saving mode off/on (click the green leaf), reset the temperature to default
 
