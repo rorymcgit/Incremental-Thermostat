@@ -33,6 +33,7 @@ $("#location-form").on('submit', function(){
   event.preventDefault()
   var url = "http://api.openweathermap.org/data/2.5/weather?q=" + $('#value').val() + "&APPID=c0c1146523134c21458501cd8b2ee3dc&units=metric";
   $.get(url, function(response){
+    console.log(url);
     $('#location-temp').text(response.main.temp + "°C")
     $('#weather-description').text(response.weather[0].description)
   })
