@@ -17,8 +17,9 @@ The user can enter their current city in and the openweathermap API will return 
 
 #### Instructions for use:
 - Clone this repo
-- In your browser, open ```index.html```
-- Select desired temperature, set power saving mode off/on (click the green leaf),  reset the temperature to default
+- In your browser, open ```views/index.html```
+- Enter your current location (nearest city)
+- Increase/decrease to desired temperature, set power saving mode off/on (click the green leaf), reset the temperature to default
 
 ![thermostat moscow](https://github.com/rorymcgit/js_thermostat/blob/master/Thermostat_moscow.png)
 
